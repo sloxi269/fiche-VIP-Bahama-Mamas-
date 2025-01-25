@@ -150,21 +150,34 @@
 <!-- Intégration de EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  emailjs.init("K8fJqGBgOXXNRcbzn");  // Remplace "K8fJqGBgOXXNRcbzn" par ton USER_ID EmailJS
+ // Initialisation de l'ID utilisateur d'EmailJS (utilise le bon ID ici)
+emailjs.init("K8fJqGBgOXXNRcbzn");
 
-    document.getElementById('vip-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Empêche la soumission par défaut
+// Écouteur d'événement pour la soumission du formulaire
+document.getElementById('vip-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche la soumission par défaut du formulaire
 
-        const formData = new FormData(this); // Récupère les données du formulaire
+    // Récupère toutes les données du formulaire
+    const formData = new FormData(this);
 
-        // Envoi des données avec EmailJS
-        emailjs.sendForm('service_nh23r52', 'template_u27fcxf', formData)
-            .then(function(response) {
-                alert('Demande envoyée avec succès');
-            }, function(error) {
-                alert('Erreur lors de l\'envoi');
-            });
-    });
+    // Affiche les données dans la console pour vérifier qu'elles sont bien récupérées
+    console.log("Form data:", formData);
+
+    // Envoi des données à EmailJS
+    emailjs.sendForm('service_nh23r52', 'template_u27fcxf', formData)
+        .then(function(response) {
+            // Si la soumission est réussie, affiche un message de succès
+            console.log('Succès:', response); // Pour déboguer dans la console
+            alert('Demande envoyée avec succès');
+        }, function(error) {
+            // Si une erreur se produit, affiche un message d'erreur
+            console.log('Erreur:', error); // Pour déboguer dans la console
+            alert('Erreur lors de l\'envoi de la demande');
+        });
+});
+
+
 </script>
 
 </body>
+</html>
