@@ -10,7 +10,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: url(https://cdn.discordapp.com/attachments/1262009326462308424/1332778134377857105/vip-logo-template-design-4d689e7e91040916df14217ef869d470_screen.png) no-repeat center center fixed;
+            backgroundno-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -150,31 +150,28 @@
 <!-- Intégration de EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-// Initialisation de l'ID utilisateur d'EmailJS (utilise le bon ID ici)
-emailjs.init("K8fJqGBgOXXNRcbzn");
+    // Initialisation de l'ID utilisateur d'EmailJS
+    emailjs.init("K8fJqGBgOXXNRcbzn");
 
-// Écouteur d'événement pour la soumission du formulaire
-document.getElementById('vip-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche la soumission par défaut du formulaire
+    document.getElementById('vip-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche la soumission par défaut du formulaire
 
-    // Récupère toutes les données du formulaire
-    const formData = new FormData(this);
+        // Afficher dans la console pour vérifier que l'événement est bien intercepté
+        console.log('Formulaire soumis !');
 
-    // Affiche les données dans la console pour vérifier qu'elles sont bien récupérées
-    console.log("Form data:", Object.fromEntries(formData)); // Ajoute cette ligne ici
+        // Récupère toutes les données du formulaire
+        const formData = new FormData(this);
 
-    // Envoi des données à EmailJS
-    emailjs.sendForm('service_nh23r52', 'template_u27fcxf', formData)
-        .then(function(response) {
-            // Si la soumission est réussie, affiche un message de succès
-            console.log('Succès:', response); // Pour déboguer dans la console
-            alert('Demande envoyée avec succès');
-        }, function(error) {
-            // Si une erreur se produit, affiche un message d'erreur
-            console.log('Erreur:', error); // Pour déboguer dans la console
-            alert('Erreur lors de l\'envoi de la demande');
-        });
-});
+        // Envoi des données à EmailJS
+        emailjs.sendForm('service_nh23r52', 'template_u27fcxf', formData)
+            .then(function(response) {
+                // Si la soumission est réussie, affiche un message de succès
+                alert('Demande envoyée avec succès');
+            }, function(error) {
+                // Si une erreur se produit, affiche un message d'erreur
+                alert('Erreur lors de l\'envoi de la demande');
+            });
+    });
 </script>
 
 </body>
