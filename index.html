@@ -150,7 +150,7 @@
 <!-- Intégration de EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
- // Initialisation de l'ID utilisateur d'EmailJS (utilise le bon ID ici)
+// Initialisation de l'ID utilisateur d'EmailJS (utilise le bon ID ici)
 emailjs.init("K8fJqGBgOXXNRcbzn");
 
 // Écouteur d'événement pour la soumission du formulaire
@@ -161,7 +161,7 @@ document.getElementById('vip-form').addEventListener('submit', function(event) {
     const formData = new FormData(this);
 
     // Affiche les données dans la console pour vérifier qu'elles sont bien récupérées
-    console.log("Form data:", formData);
+    console.log("Form data:", Object.fromEntries(formData)); // Ajoute cette ligne ici
 
     // Envoi des données à EmailJS
     emailjs.sendForm('service_nh23r52', 'template_u27fcxf', formData)
@@ -175,8 +175,6 @@ document.getElementById('vip-form').addEventListener('submit', function(event) {
             alert('Erreur lors de l\'envoi de la demande');
         });
 });
-
-
 </script>
 
 </body>
