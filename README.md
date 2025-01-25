@@ -150,8 +150,7 @@
 <!-- Intégration de EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    emailjs.init(K8fJqGBgOXXNRcbzn)
- 
+  emailjs.init("K8fJqGBgOXXNRcbzn");  // Remplace "K8fJqGBgOXXNRcbzn" par ton USER_ID EmailJS
 
     document.getElementById('vip-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Empêche la soumission par défaut
@@ -169,4 +168,3 @@
 </script>
 
 </body>
-</html>
