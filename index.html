@@ -6,11 +6,12 @@
     <title>VIP Bahama Mamas</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Fond personnalisable */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: url(https://cdn.discordapp.com/attachments/1262009326462308424/1332778134377857105/vip-logo-template-design-4d689e7e91040916df14217ef869d470_screen.png) no-repeat center center fixed;
+            background: url(https://cdn.discordapp.com/attachments/1262009326462308424/1332778134377857105/vip-logo-template-design-4d689e7e91040916df14217ef869d470_screen.png?ex=67967ddd&is=67952c5d&hm=d9515894b1e20d3ac003b26a6f52ee9c4ae7e2f3cb69f889023bbaa1daee33f3) no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -56,6 +57,11 @@
             color: #333;
         }
 
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
         button {
             background: #ffcc00;
             color: #000;
@@ -87,6 +93,10 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+        }
+
+        .discord-button:hover {
+            background-color: #4853c8;
         }
 
         footer {
@@ -153,6 +163,7 @@
     // Initialisation de l'ID utilisateur d'EmailJS
     emailjs.init("K8fJqGBgOXXNRcbzn");
 
+    // Écouteur d'événement pour la soumission du formulaire
     document.getElementById('vip-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Empêche la soumission par défaut du formulaire
 
